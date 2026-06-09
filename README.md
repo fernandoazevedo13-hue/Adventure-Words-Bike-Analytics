@@ -1,4 +1,4 @@
-# Análise de Vendas – AdventureWorks (documentação técnica)
+# Análise de Vendas –  (documentação técnica)
 
 Documento de apoio ao arquivo Power BI. Descreve a carga dos dados, o modelo de relacionamentos e as métricas criadas. A leitura dos resultados é apresentada à parte.
 
@@ -19,7 +19,7 @@ Carreguei tudo via Power Query. Os tratamentos principais foram:
 - **União das vendas.** Juntei 2020, 2021 e 2022 numa única tabela de fatos. Não faz sentido manter três tabelas com a mesma estrutura, e separadas elas só atrapalham as medidas.
 - **Tipagem das datas.** `OrderDate` e `StockDate` vieram como texto. Converti para data, senão nada de tempo funciona direito.
 - **Limpeza da base de clientes.** O `Customer.csv` trazia algumas linhas de lixo da exportação (registros sem chave válida). Removi essas linhas e fiquei com a base de clientes consistente.
-- **Calendário.** Optei por gerar a tabela de datas no DAX com `CALENDAR(MIN, MAX)` ancorada na `OrderDate`. Cheguei a testar com `CALENDARAUTO()`, mas ela puxava datas de nascimento e de estoque e esticava o calendário para faixas que não têm nada a ver com a venda. A versão manual ficou limpa.
+- **Calendário.** Optei por gerar a tabela de datas, porém não tuilzei pois as datas contidas na tabela dimensão englobavam todas as datas necessárias para confeção do case
 
 ## Atividade 2 – Relacionamentos
 
